@@ -11,11 +11,14 @@ const Register = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:5000/api/auth/register", {
-        name, // Send name
-        email,
-        password,
-      });
+      await axios.post(
+        "https://myshop-ecom-backend1.onrender.com/api/auth/register",
+        {
+          name, // Send name
+          email,
+          password,
+        }
+      );
       setMessage("✅ Registration successful! You can now login.");
     } catch (error) {
       setMessage(error.response?.data?.message || "❌ Registration failed");
